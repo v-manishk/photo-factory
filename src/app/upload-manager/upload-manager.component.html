@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="dropzone" dropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+
+  <h3> Drag & Drop files here</h3>
+
+  <div>
+      <label>
+          <input type="file" (change)="onDrop($event)">
+      </label>
+  </div>
+</div>
+
+<div *ngIf="files.length > 0">
+  Uploads
+  <hr>
+</div>
+
+<div *ngIf="files">
+    <upload-task [files]="files"></upload-task>
+</div>
+</html>
